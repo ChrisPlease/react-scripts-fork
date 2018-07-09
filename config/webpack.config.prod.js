@@ -211,6 +211,10 @@ module.exports = {
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
                       },
+                      query: {
+                        modules: true,
+                        localIndentName: '[name]__[local]__[hash:base64:5]'
+                      }
                     },
                     {
                       loader: require.resolve('postcss-loader'),

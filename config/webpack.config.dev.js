@@ -187,8 +187,8 @@ module.exports = {
               require.resolve('style-loader'),
               {
                 loader: require.resolve('css-loader'),
-                options: {
-                  importLoaders: 1,
+                query: {
+                  modules: true,
                   localIndentName: '[name]__[local]__[hash:base64:5]'
                 },
               },
