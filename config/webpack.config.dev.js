@@ -188,6 +188,7 @@ module.exports = {
               {
                 loader: require.resolve('css-loader'),
                 query: {
+                  importLoaders: 1,
                   modules: true,
                   localIndentName: '[name]__[local]__[hash:base64:5]'
                 },
@@ -213,8 +214,8 @@ module.exports = {
                 },
               },
             ],
-          },
-          // "file" loader makes sure those assets get served by WebpackDevServer.
+        },
+        // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
           // This loader doesn't use a "test" so it will catch all modules
