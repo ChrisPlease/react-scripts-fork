@@ -187,7 +187,7 @@ module.exports = {
               require.resolve('style-loader'),
               {
                 loader: require.resolve('css-loader'),
-                query: {
+                options: {
                   importLoaders: 1,
                   modules: true,
                   localIndentName: '[name]__[local]__[hash:base64:5]'
@@ -200,6 +200,12 @@ module.exports = {
                   // https://github.com/facebookincubator/create-react-app/issues/2677
                   ident: 'postcss',
                   plugins: () => [
+                    require('postcss-import'),
+                    require('postcss-preset-env')({
+                      stage: 0
+                    }),
+                    // require('postcss-nesting'),
+                    // require('postcss-custom-media')(),
                     require('postcss-flexbugs-fixes'),
                     autoprefixer({
                       browsers: [
